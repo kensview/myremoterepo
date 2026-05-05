@@ -10,19 +10,85 @@
     <nav class="navbar">
         <div class="nav-brand">MyApp</div>
         <ul class="nav-links">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="login.html">登录</a></li>
+            <li><a href="index.html" class="active">首页</a></li>
+            <li><a href="login.html" id="loginLink">登录</a></li>
+            <li id="logoutItem" style="display: none;"><a href="#" id="logoutLink">退出</a></li>
         </ul>
+        <div class="user-info" id="userInfo" style="display: none;">
+            <span>欢迎, <strong id="welcomeUser"></strong></span>
+        </div>
     </nav>
 
-    <main class="container">
-        <h1>欢迎来到 MyApp</h1>
-        <p>这是一个用于学习 Git 并行开发的项目。</p>
-        <p>请 <a href="login.html">登录</a> 以体验完整功能。</p>
+    <main class="home-main">
+        <section class="hero">
+            <h1>欢迎来到 MyApp</h1>
+            <p id="heroText">一个简单高效的应用平台</p>
+            <div class="hero-buttons">
+                <a href="login.html" class="btn btn-primary" id="heroLoginBtn">立即登录</a>
+                <a href="#features" class="btn btn-secondary">了解更多</a>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <h2>功能特性</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>安全登录</h3>
+                    <p>安全的用户认证系统，保护您的数据安全</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>快速响应</h3>
+                    <p>优化的性能设计，给您流畅的使用体验</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>响应式设计</h3>
+                    <p>完美适配各种设备，随时随地访问</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>简洁界面</h3>
+                    <p>现代化的UI设计，操作简单直观</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <h2>数据统计</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">活跃用户</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="visitCount">1000+</span>
+                    <span class="stat-label">访问次数</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">在线率</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-actions" id="quickActions" style="display: none;">
+            <h2>快捷操作</h2>
+            <div class="actions-grid">
+                <button class="action-btn" onclick="showToast('功能开发中...')">个人中心</button>
+                <button class="action-btn" onclick="showToast('功能开发中...')">设置</button>
+                <button class="action-btn" onclick="showToast('功能开发中...')">帮助文档</button>
+            </div>
+        </section>
     </main>
+
+    <div class="toast" id="toast"></div>
 
     <footer>
         <p>&copy; 2026 MyApp. All rights reserved.</p>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
